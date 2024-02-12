@@ -60,5 +60,5 @@ As a result, we will be going through and refetching the popularity for songs wi
 
 In addition, after analyzing the heatmap and pairplots, it is evident that the other values are not well correlated with popularity (the highest column being instrumentallness with a value of -0.29). Thus we are aiming to improve this by:
 - fetching more factors from the Spotify API and plotting those
-- adding more entries (meaning we get data for more songs from the Spotify API)
+- adding more entries such as liveness, start_of_fade_out, start_of_fade_in, time signature, and pitches (meaning we get data for more songs from the Spotify API)
 - quantifying categorical values, such as genre, to help provide an additional factor for our model
