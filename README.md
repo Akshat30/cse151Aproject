@@ -72,7 +72,9 @@ We went through and refetched the popularity for songs that had a popularity of 
 
 
 ## Model Version 1
-Christen
+With the min-maxed data and features created, we created a Linear Regression model to predict popularity. We set the training sample size to 80% and for any rows in the dataframe that had invalid data, we simply dropped them. Since we had over 10k rows of data, and we didn't have to drop many rows (around 10) we thought it would be fine to just drop them instead of replacing them with approximate data. 
+
+In addition, we implemented another linaer regression model with cross-validation. We used 10 folds for cross validation. For both these models, we got MSE values of around 400, which was pretty poor.
 
 
 ## Future steps
