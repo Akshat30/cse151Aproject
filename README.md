@@ -62,3 +62,11 @@ In addition, after analyzing the heatmap and pairplots, it is evident that the o
 - fetching more factors from the Spotify API and plotting those
 - adding more entries such as liveness, start_of_fade_out, start_of_fade_in, time signature, and pitches (meaning we get data for more songs from the Spotify API)
 - quantifying categorical values, such as genre, to help provide an additional factor for our model
+
+# Milestone 3
+
+## Preprocessing Data
+
+## Model Version 1
+
+## Future steps
