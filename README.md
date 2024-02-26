@@ -76,4 +76,6 @@ Christen
 
 
 ## Future steps
-Ojas
+Given the relatively poor performance of our initial linear regression model, we would like to move on to more complex models in the future. One possible model we were thinking about was a DecisionTreeRegressor or RandomForestRegressor, something that could better capture the complex features we currently have and doesn't rely on linear relationships. 
+
+Another model could possibly be a kernelized SVM. Given that our features/data clearly doesn't follow a simple, straight-line, linear relationship a kernelized SVM could also help better prediction while avoiding some of the overfitting a decision tree/random forest could bring.
