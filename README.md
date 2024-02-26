@@ -66,7 +66,9 @@ In addition, after analyzing the heatmap and pairplots, it is evident that the o
 # Milestone 3
 
 ## Preprocessing Data
-AJ + Liam
+Liam
+
+We went through and refetched the popularity for songs that had a popularity of 0 originally. This time, we specified the market to be US, and had backup countries in case the popularity for the US was 0. After going through and updating these values, the number of songs with a popularity of 0 went from 2479 to 195. This gave us 2284 more datapoints to work with, allowing our training to be better.
 
 
 ## Model Version 1
