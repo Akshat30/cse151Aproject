@@ -2,7 +2,7 @@
 Group Members: Christen Xie, Ojas Vashishtha, Liam Manatt, Akshat Jain
 
 ## Colab Notebook:
-View only link [here](https://colab.research.google.com/drive/1ajv1D_nDXe5WoSvvUEh-KT8eSF15-887?usp=sharing).
+View only link [here](https://colab.research.google.com/drive/11aCk1dcJwYg5TeijLqb4zEgZH70U5kcP?usp=sharing).
 
 Note: `cse151Aproject.ipynb` in repository is periodically updated as a copy of the notebook linked above. View link for most up to date version of notebooik.
 
