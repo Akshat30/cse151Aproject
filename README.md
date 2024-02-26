@@ -66,7 +66,12 @@ In addition, after analyzing the heatmap and pairplots, it is evident that the o
 # Milestone 3
 
 ## Preprocessing Data
+AJ + Liam
+
 
 ## Model Version 1
+Christen
+
 
 ## Future steps
+Ojas
