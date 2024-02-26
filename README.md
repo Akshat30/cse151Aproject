@@ -66,7 +66,7 @@ In addition, after analyzing the heatmap and pairplots, it is evident that the o
 # Milestone 3
 
 ## Preprocessing Data
-Liam
+As we planned, we set up one hot encoding for the categorical values. We one hot encoded key, genre, and time signature. We then added two new features to make use of the data in artist name and song name. We create the features song_name_length and artist_name_length, we are hoping to use the relation of name length to better predict popularity. Then we min-maxed the remaining numerical features because they fall between the bounded interval 0-1. 
 
 We went through and refetched the popularity for songs that had a popularity of 0 originally. This time, we specified the market to be US, and had backup countries in case the popularity for the US was 0. After going through and updating these values, the number of songs with a popularity of 0 went from 2479 to 195. This gave us 2284 more datapoints to work with, allowing our training to be better.
 
