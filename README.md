@@ -84,19 +84,19 @@ Another model could possibly be a kernelized SVM. Given that our features/data c
 
 # Milestone 4
 
-## Evaluation of data, labels, and loss function (1.)
+## 1. Evaluation of data, labels, and loss function
 
-## Model Version (2.)
+## 2. Model Version 
 
-### Comparing Training vs Test Error (3.)
+### 3. Comparing Training vs Test Error 
 
-### Fitting Graph and Comparison to Model 1 (4.)
+### 4. Fitting Graph and Comparison to Model 1 
 
-### Extensive Steps (5.)
+### 5. Extensive Steps 
 
-### Plan for Next model (6.)
+### 6. Plan for Next model 
 
-### Link to Jupyter Notebook [here](https://colab.research.google.com/drive/11aCk1dcJwYg5TeijLqb4zEgZH70U5kcP?usp=sharing). (7.)
+### 7. Link to Jupyter Notebook [here](https://colab.research.google.com/drive/11aCk1dcJwYg5TeijLqb4zEgZH70U5kcP?usp=sharing). 
 
-### Conclusion (8.)
+### 8. Conclusion 
 
