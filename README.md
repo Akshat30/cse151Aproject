@@ -81,3 +81,22 @@ In addition, we implemented another linaer regression model with cross-validatio
 Given the relatively poor performance of our initial linear regression model, we would like to move on to more complex models in the future. One possible model we were thinking about was a DecisionTreeRegressor or RandomForestRegressor, something that could better capture the complex features we currently have and doesn't rely on linear relationships. 
 
 Another model could possibly be a kernelized SVM. Given that our features/data clearly doesn't follow a simple, straight-line, linear relationship a kernelized SVM could also help better prediction while avoiding some of the overfitting a decision tree/random forest could bring.
+
+# Milestone 4
+
+## Evaluation of data, labels, and loss function (1.)
+
+## Model Version (2.)
+
+### Comparing Training vs Test Error (3.)
+
+### Fitting Graph and Comparison to Model 1 (4.)
+
+### Extensive Steps (5.)
+
+### Plan for Next model (6.)
+
+### Link to Jupyter Notebook [here](https://colab.research.google.com/drive/11aCk1dcJwYg5TeijLqb4zEgZH70U5kcP?usp=sharing). (7.)
+
+### Conclusion (8.)
+
