@@ -95,7 +95,12 @@ To train the model, we used the same X_train, X_test, y_train, and y_test datase
 Compared to model 1 which had training and testing error of 444.6857792808256 and 437.17367820600833 respectively, Model 2 is an improvement with lower training and testing errors. This is likely due to the fact that the Gradient Boosting model better captures the non-linear relationship.
 
 ### Extensive Steps 
-anything on k-fold cross valid, hyper parameters?
+We attempted to use GridSearch to find the best hyper-parameters, and this search tested 27 different possibilities with 135 total due to a crossfold of 5. While this did give us our best Test MSE so far (see below), it is very obvious to see that the model was very overfitted, due to the Train MSE being much lower than the Test MSE, almost 4 times less.
+
+```
+Test MSE: 371.38533319289274
+Train MSE: 106.98165918403983
+```
 
 > The Jypter Notebook can be found [here](https://colab.research.google.com/drive/11aCk1dcJwYg5TeijLqb4zEgZH70U5kcP?usp=sharing).
 
