@@ -92,7 +92,7 @@ For the data, we decided to make a change by using the StandardScaler in additio
 To train the model, we used the same X_train, X_test, y_train, and y_test datasets as our initial linear regression model to ensure that we could compare the models' performances fairly. We also scaled the X_train and X_test datasets using standard scaler. After training the gradient boosting model, we found training and testing error of 347.7402630199366 and 399.97546067610523 respectively. From this it is clear that the data does not seem to be overfitting in any significant way as training and testing error are relatively similar. 
 
 ## Fitting Graph and Comparison to Model 1 
-Compared to model 1 which had training and testing error of 444.6857792808256 and 437.17367820600833 respectively, Model 2 is an improvement with lower training and testing errors. This is likely due to the fact that the Gradieng Boosting model better captures the non-linear relationship.
+Compared to model 1 which had training and testing error of 444.6857792808256 and 437.17367820600833 respectively, Model 2 is an improvement with lower training and testing errors. This is likely due to the fact that the Gradient Boosting model better captures the non-linear relationship.
 
 ### 5. Extensive Steps 
 anything on k-fold cross valid, hyper parameters?
