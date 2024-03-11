@@ -85,7 +85,7 @@ Another model could possibly be a kernelized SVM. Given that our features/data c
 # Milestone 4
 
 ## Evaluation of data, labels, and loss function
-For the data, we decided to make a change by using the StandardScaler in addition to our already scaled data. We also pivoted away from simple linear regression and went forward with a gradient booster regressor. Since our initial linear regression model wasn't as accurate, we decided to use a model that could better capture the non-linear relationship the dataset features had with the target variable. 
+For the data, we decided to make a change by using the StandardScaler in addition to our already scaled data. We also pivoted away from simple linear regression and went forward with a gradient booster regressor. Since our initial linear regression model wasn't as accurate, we decided to use a model that could better capture the non-linear relationship the dataset features had with the target variable. In addition, we experimented with trying to include only certain features in the training data, and leaving out features that had a correlation almost close to 0 with popularity. However, this did not seem to make our model better.
 
 
 ## Comparing Training vs Test Error 
@@ -98,7 +98,7 @@ Compared to model 1 which had training and testing error of 444.6857792808256 an
 anything on k-fold cross valid, hyper parameters?
 
 ## Plan for Next model 
-For our next model, we want to continue the trend of using models that can capture non-linear relationships. One possibility is kernel ridge regression, although we currently don't have an overfitting problem and the model could be computationally expensive. Another possibility is a random forest regressor, which could also help with capturing relationships between features and the popularity of a song.
+For our next model, we want to continue the trend of using models that can capture non-linear relationships. One possibility is kernel ridge regression, although we currently don't have an overfitting problem and the model could be computationally expensive. Another possibility is a random forest regressor, which could also help with capturing relationships between features and the popularity of a song. We also want to look into searching for more features on the Spotify API, and generating more features from those. This is because we are unable to find strong correlation with popularity, at the moment.
 
 ## Conclusion 
-Overall, the 2nd model was a success in that we improved both training and testing error without seeing much overfitting. The model was able to perform well due to its innate design in using an ensemble of models as well as our data being standardized and scaled. Hyper-parameter tuning could definitely add to this model, and is something we will explore in the future.
+Overall, the 2nd model was a success in that we improved both training and testing error without seeing much overfitting. The model was able to perform well due to its innate design in using an ensemble of models as well as our data being standardized and scaled. More signifianct hyper-parameter tuning could definitely add to this model, and is something we will explore in the future.
