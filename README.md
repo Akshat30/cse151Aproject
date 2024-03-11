@@ -94,8 +94,10 @@ To train the model, we used the same X_train, X_test, y_train, and y_test datase
 ## Fitting Graph and Comparison to Model 1 
 Compared to model 1 which had training and testing error of 444.6857792808256 and 437.17367820600833 respectively, Model 2 is an improvement with lower training and testing errors. This is likely due to the fact that the Gradient Boosting model better captures the non-linear relationship.
 
-### 5. Extensive Steps 
+### Extensive Steps 
 anything on k-fold cross valid, hyper parameters?
+
+> The Jypter Notebook can be found [here](https://colab.research.google.com/drive/11aCk1dcJwYg5TeijLqb4zEgZH70U5kcP?usp=sharing).
 
 ## Plan for Next model 
 For our next model, we want to continue the trend of using models that can capture non-linear relationships. One possibility is kernel ridge regression, although we currently don't have an overfitting problem and the model could be computationally expensive. Another possibility is a random forest regressor, which could also help with capturing relationships between features and the popularity of a song. We also want to look into searching for more features on the Spotify API, and generating more features from those. This is because we are unable to find strong correlation with popularity, at the moment.
