@@ -84,19 +84,21 @@ Another model could possibly be a kernelized SVM. Given that our features/data c
 
 # Milestone 4
 
-## 1. Evaluation of data, labels, and loss function
+## Evaluation of data, labels, and loss function
+For the data, we decided to make a change by using the StandardScaler in addition to our already scaled data. We also pivoted away from simple linear regression and went forward with a gradient booster regressor. Since our initial linear regression model wasn't as accurate, we decided to use a model that could better capture the non-linear relationship the dataset features had with the target variable. 
 
-## 2. Model Version 
 
-### 3. Comparing Training vs Test Error 
+## Comparing Training vs Test Error 
+To train the model, we used the same X_train, X_test, y_train, and y_test datasets as our initial linear regression model to ensure that we could compare the models' performances fairly. We also scaled the X_train and X_test datasets using standard scaler. After training the gradient boosting model, we found training and testing error of 347.7402630199366 and 399.97546067610523 respectively. From this it is clear that the data does not seem to be overfitting in any significant way as training and testing error are relatively similar. 
 
-### 4. Fitting Graph and Comparison to Model 1 
+## Fitting Graph and Comparison to Model 1 
+Compared to model 1 which had training and testing error of 444.6857792808256 and 437.17367820600833 respectively, Model 2 is an improvement with lower training and testing errors. This is likely due to the fact that the Gradieng Boosting model better captures the non-linear relationship.
 
 ### 5. Extensive Steps 
+anything on k-fold cross valid, hyper parameters?
 
-### 6. Plan for Next model 
+## Plan for Next model 
+For our next model, we want to continue the trend of using models that can capture non-linear relationships. One possibility is kernel ridge regression, although we currently don't have an overfitting problem and the model could be computationally expensive. Another possibility is a random forest regressor, which could also help with capturing relationships between features and the popularity of a song.
 
-### 7. Link to Jupyter Notebook [here](https://colab.research.google.com/drive/11aCk1dcJwYg5TeijLqb4zEgZH70U5kcP?usp=sharing). 
-
-### 8. Conclusion 
-
+## Conclusion 
+Overall, the 2nd model was a success in that we improved both training and testing error without seeing much overfitting. The model was able to perform well due to its innate design in using an ensemble of models as well as our data being standardized and scaled. Hyper-parameter tuning could definitely add to this model, and is something we will explore in the future.
