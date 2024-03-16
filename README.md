@@ -121,6 +121,7 @@ Finally, for our 3rd model we decided to use a random forest regressor. For our 
 
 With parameters of: max_depth=15, n_estimators = 50,vmin_samples_split= 5, min_samples_leaf = 2, we found a test error: 371.8593377175866 and train error: 134.97723106462342. Overall, the performance of the forest regressor compared to our previous model, at least for test error, is around the same. Trying to fix the overfitting by reducing the depth also did not help, as test_error increased overall. Overall, this model is not a major improvement from our previous gradient booster regressor.
 
+# Analysis and future steps:
 Essentially, while compared to model 1 model 3 has a better testing error, we don't see much improvement from model 2 to model 3. It seems that a random forest wasn't able to capture our data any better than the gradient booster. Something we would hope to implement perhaps in the future would be a parameter grid for hyperparameterization. However, due to time constraints we were not able to this. Overall, it seems that throwing a complex model at this data didn't add much, and we will focus on the gradient booster for regression problems related to the dataset.
 
 # Results
