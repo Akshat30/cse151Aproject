@@ -126,6 +126,20 @@ Overall, the 2nd model was a success in that we improved both training and testi
 # Conclusion
 [TODO CHRISTEN]
 
+# Collaboration Section
+### Akshat Jain
+Title:
+Contribution:
+### Christen Xie [TODO CHRISTEN]
+Title:
+Contribution:
+### Ojas Vashishtha [TODO OJAS]
+Title:
+Contribution:
+### Liam Manatt [TODO LIAM]
+Title:
+Contribution:
+
 # Previous Submissions
 
 ## Milestone 2:
