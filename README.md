@@ -182,7 +182,7 @@ For model 3, we moved onto a random forest regressor. We thought the additional 
 While we were able to improve our accuracy using different models, there were still several aspects in which we could've made improvements. One area that lead to shortcomings was the lack of reliable features from the Spotify API. Some data was missing from songs that led to us ahving to work around empty data. In addition, Spotify only captures the popularity of a song on Spotify, not including how popular songs are on a radio, other music platforms, etc. It won't capture the popularity of a song through other social media efforts. In addition, models are oversimplifying the complexity of something as complex as preferences and likes. We learned truly how hard it is to capture interactions between feelings and enjoyment with a machine-learning model
 
 ## Believability 
-Our lineup, we will admit is not the most believable as there was a lot of error. There are many aspects of song popularity that we still need to account for. 
+Our lineup, we will admit is not the most believable as there was a lot of error. There are many aspects of song popularity that we still need to account for. However, our logistic models show that there is some basis for the claim that popularity can be predicted. We believe if the problem was limited to a single genre and time period, we could predict much better.
 
 # Conclusion
 Reflecting on this project, we can tell that predicting song popularity from factors is a very challenging task and includes a variety of factors that are hard to represent in a machine-learning model. Even though we used a variety of models, we were only able to minimize the MSE so much.
