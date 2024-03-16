@@ -123,20 +123,40 @@ Finally, for our 3rd model we decided to use a random forest regressor. We belie
 [TODO LIAM]
 
 # Discussion
-[TODO CHRISTEN]
+In this projet, we wanted to predict the popularity of songs on Spotify given various features of the song. We hypothesized that some of the features would have significant effects on the popularity, feature such as danceability and energy usually lead to popular pop songs.
+
+We started with a basic linear regression, as that was the main model we were studying at the time. However, using this first linear regression model, we got a very poor MSE, telling us that a more complex model would be required to model the data. As the popularity of music is complexly influenced by a variety of factors, a linear model was not a good choice. 
+In this model, we also implemented feature engineering as an attempt to improve our mdoel's performance. Since this model is more effective at capturing non-linear relationships, we thought it would be better. In addition, we used one-hot encoding for categorical variables, introducing features like length of song and length of artist name. We hoped looking at all this data would improve the MSE and it did, but the MSE was still pretty poor. 
+
+
+We also had some problems with out data that we had to overcome with some pre-processing. For example, one issue we faced was songs with a popularity of 0. We were able to mitigate this by setting the market to 'US', a feature on the Spotify API that we found through some research on StackOverflow.
+
+For model 2, we tried using a gradient boosting regressor, building a series of decision trees based on correcting the errors of a previous one. We also implemented using a scaler with the StandardScaler. To train out data, we scaled the X_train and X_test datasets with the scaler and found errors in the 300s. Since the test and training data were similar, we were able to deduce that there was little to no overfitting. Being in the 300s was an improvement from the 400+ values using the LinearRegression, so using this model was a step forward from the first one.
+
+For model 3, we moved onto a random forest regressor. We thought the additional complexity of this model would help with the accuracy of the model, but the performance was similar to the second model. Even when we accounted for overfitting by reducing our data set, our error was still high.
+
+### Reflections
+While we were able to improve our accuracy using different models, there were still several aspects in which we could've made improvements. One area that lead to shortcomings was the lack of reliable features from the Spotify API. Some data was missing from songs that led to us ahving to work around empty data. In addition, Spotify only captures the popularity of a song on Spotify, not including how popular songs are on a radio, other music platforms, etc. It won't capture the popularity of a song through other social media efforts. In addition, models are oversimplifying the complexity of something as complex as preferences and likes. We learned truly how hard it is to capture interactions between feelings and enjoyment with a machine-learning model
+
+## Believability 
+Our lineup, we will admit is not the most believable as there was a lot of error. There are many aspects of song popularity that we still need to account for. 
 
 # Conclusion
-[TODO CHRISTEN]
+Reflecting on this project, we can tell that predicting song popularity from factors is a very challenging task and includes a variety of factors that are hard to represent in a machine-learning model. Even though we used a variety of models, we were only able to minimize the MSE so much.
+
+However, one key takeawway we had is the importance of feature engineering. Just by implementing feature engineering into our models, we were able ot drop our error from over 400 to 300s. We also learned a lot about the the value of overfitting. We spent a lot of tinme finding the balance of overfitting and generalizing our data in our to optimize our model.
+Going forward, we could look into more data, potentially outside of Spotify such as artist data or other social media data. In addition, we could use more complex models, including does involving deep learning or neural networks. 
 
 # Collaboration Section
 ### Akshat Jain
 Title: "Project Manager"
 Contribution: I helped manage our deadlines and did a lot of the administrative tasks, like creating the GitHub, notebook, making sure people were up to date with their work, and planning meetings. I also helped preprocess the data by pulling popularity from the Spotify API, helped make the first model, and performed the data analysis on Google Colab.
-### Christen Xie [TODO CHRISTEN]
+### Christen Xie 
 Title: "Developer and Researcher"
 Contribution: I was involved with the creation of models that we tested on. I did a lot of testing on the linear regression model including using cross-validation to try and improve MSE values. I also worked with my teammates to produce and write analyses.
 ### Ojas Vashishtha 
 Contribution: I helped with writing some of the code for model 2 and writing the code for model 3 as well as thinking of ideas for those models. I also helped with some of the preprocessing like encoding and writing parts of the analysis for models 2 and 3. 
+
 ### Liam Manatt [TODO LIAM]
 Title:
 Contribution:
