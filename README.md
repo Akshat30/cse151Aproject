@@ -74,6 +74,9 @@ In addition, after analyzing the heatmap and pairplots, it is evident that the o
 - fetching more factors from the Spotify API and plotting those
 - quantifying categorical values, such as genre, to help provide an additional factor for our model
 
+Fig 1 heatmap:
+![screenshot](Graphs/a32c17a70d4b3a5b440c79b3cb1ea301.png)
+
 As we planned, we set up one hot encoding for the categorical values. We one hot encoded key, genre, and time signature. We then added two new features to make use of the data in artist name and song name. We create the features song_name_length and artist_name_length, we are hoping to use the relation of name length to better predict popularity. Then we min-maxed the remaining numerical features because they fall between the bounded interval 0-1. 
 
 We went through and refetched the popularity for songs that had a popularity of 0 originally. This time, we specified the market to be US, and had backup countries in case the popularity for the US was 0. After going through and updating these values, the number of songs with a popularity of 0 went from 2479 to 195. This gave us 2284 more data points to work with, allowing our training to be better.
@@ -117,10 +120,14 @@ Essentially, while compared to model 1 model 3 has a better testing error, we do
 
 ## Data Preprocessing Results
 Our final Dataframe was 10130 rows, it had 40 columns which can be seen in the figure below.
+Fig 2 Columns
 ![screenshot](Graphs/6804fa2c605042c8e411459576fe9277.png)
 
 ## Model 1 Results:
 For both these models, we got MSE values of around 400, which was pretty poor. We are currently in the under-fitting side of the fitting graph as our model produces a line that doesn't fit the data well. This was just a baseline model to understand the complexity required so this is expected. The figure below shows our prediction vs the actual popularity. As we can see the two values seldom line up and our model is not equipped to handle this prediction problem.
+
+Fig 3 Predictions for Model 1
+![screenshot](Graphs/4e54d0406e389e3482b674d00e284303.png)
 
 ## Model 2 Results:
 In model two we saw much better results, after gridsearch we were able to greatly decrease the train mse. Though the mse is rather large we took this as a good sign that there is some way that we could predict popularity. However, as seen below the model struggled with overfitting and still predicted poorer than we would hope. The scatter plot below shows each song's popularity vs its prediction. As we can see the model does seem to improve but is weighed down by its predictions on less popular songs.
@@ -128,19 +135,34 @@ In model two we saw much better results, after gridsearch we were able to greatl
 Test MSE: 371.38533319289274
 Train MSE: 106.98165918403983
 ```
+Fig 4 Gridsearch Graph
+![screenshot](Graphs/1298065e44bab478c5c98fbeb230b59d.png)
+
+Fig 5 Predictions for Model 2
+![screenshot](Graphs/2435ebe1f7bcbf54f9739deb5b5a8e4c.png)
 
 ## Model 3 Results:
 With parameters of: max_depth=15, n_estimators = 50,vmin_samples_split= 5, min_samples_leaf = 2, we found a test error: 371.8593377175866 and train error: 134.97723106462342. Overall, the performance of the forest regressor compared to our previous model, at least for test error, is around the same. Trying to fix the overfitting by reducing the depth also did not help, as test_error increased overall. Overall, this model is not a major improvement from our previous gradient booster regressor. However it did seem to predict better on the more popular songs, again struggling with popularity scores under 20.
+
+Fig 6 Predictions for Model 3
+![screenshot](Graphs/56a79a3e70a2a2e5ebe3642e68f30b2d.png)
 
 
 ## Logistic Results
 For the following subheaders we will describe our 4th and 5th models. These models are our way of making use of the preprocessing we accomplished. Though we were not entirely successful in being able to predict popularity of a song, we wanted to turn the problem into a classification assignment. We choose to make two more models which tried to predict whether or not a song would be popular.
 
 ## Model 4 Results:
-Model 4 demonstrated to us that a logistic approach to the problem was much easier to handle than a regressive approach. Model 4 was a logistic regression model that took in scaled inputs and predicted whether a song was above 60 popularity score or not. This model faired much better than our previous models. It was able to achieve an accuracy of about 70%, which all things considered is pretty good. The figure below provides the classfication report for model 4
+Model 4 demonstrated to us that a logistic approach to the problem was much easier to handle than a regressive approach. Model 4 was a logistic regression model that took in scaled inputs and predicted whether a song was above 60 popularity score or not. This model faired much better than our previous models. It was able to achieve an accuracy of about 70%, which all things considered is pretty good. The figure below provides the classfication report for model 4.
+
+Fig 7 Model 4 Report
+![screenshot](Graphs/81753281c0d2057c66063562c348345a.png)
 
 ## Model 5 Results:
 Model 5 was our expansion on model 4. It took in the same data, but this time fed it into an Ann which was able to classify whether a song was popular or not. As with previous model, the model struggled a bit from over fitting but did prove to be our most successful model. The figure below shows the classification report for the ANN model.
+
+Fig 8 Model 5 Report
+![screenshot](Graphs/f63159333dd6ad9b4741f784dd309f7f.png)
+
 
 # Discussion
 In this project, we wanted to predict the popularity of songs on Spotify given various features of the song. We hypothesized that some of the features would have significant effects on the popularity, feature such as danceability and energy usually lead to popular pop songs.
