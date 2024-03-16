@@ -201,7 +201,7 @@ Contribution: I was involved with the creation of models that we tested on. I di
 Title: "Developer and Analyst"
 Contribution: I helped with writing some of the code for model 2 and writing the code for model 3 as well as thinking of ideas for those models. I also helped with some of the preprocessing like encoding and writing parts of the analysis for models 2 and 3. 
 
-### Liam Manatt [TODO LIAM]
+### Liam Manatt
 Title: "Plots and Logistic Regressor"
 
 Contribution: I added plots to all of our code, as well as did a lot of the feature engineering. I also added the extension to our project for classifying songs are popular vs unpopular. Additionally I wrote the results section of our project.
