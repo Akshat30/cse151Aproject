@@ -220,7 +220,8 @@ Contribution: I was involved with the creation of models that we tested on. I di
 ### Ojas Vashishtha 
 Title: "Developer and Analyst"
 
-Contribution: I helped with writing some of the code for model 2 and writing the code for model 3 as well as thinking of ideas for those models. I also helped with some of the preprocessing like encoding and writing parts of the analysis for models 2 and 3. 
+Contribution: I helped with writing the code for model 2 and writing the code for model 3 as well as brainstorming whcih models to use. I also helped with the preprocessing like encoding and writing the analysis for models 2 and 3. I also aided in cleaning the notebook and making it readable.
+
 
 ### Liam Manatt
 Title: "Plots and Logistic Regressor"
