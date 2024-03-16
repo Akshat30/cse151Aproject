@@ -117,7 +117,11 @@ For our next model, we want to continue the trend of using models that can captu
 Overall, the 2nd model was a success in that we improved both training and testing error without seeing much overfitting. The model was able to perform well due to its innate design in using an ensemble of models as well as our data being standardized and scaled. More signifianct hyper-parameter tuning could definitely add to this model, and is something we will explore in the future.
 
 ## Model 3:
-Finally, for our 3rd model we decided to use a random forest regressor. We believed that the ensemble method of this classifier as well as its additional complexity would help in making predictions. With parameters of: max_depth=15, n_estimators = 50,vmin_samples_split= 5, min_samples_leaf = 2, we found a test error: 371.8593377175866 and train error: 134.97723106462342. Overall, the performance of the forest regressor compared to our previous model, at least for test error, is around the same. Trying to fix the overfitting by reducing the depth also did not help, as test_error increased overall. Overall, this model is not a major improvement from our previous gradient booster regressor.
+Finally, for our 3rd model we decided to use a random forest regressor. For our third model, we decided to pivot away from version of linear regression and try something different in hopes of getting a better MSE. We chose random forest specifically for 2 reasons: it is a type of model that can better adjust to complex features, and it is less susceptible to overfitting than a decision tree. 
+
+With parameters of: max_depth=15, n_estimators = 50,vmin_samples_split= 5, min_samples_leaf = 2, we found a test error: 371.8593377175866 and train error: 134.97723106462342. Overall, the performance of the forest regressor compared to our previous model, at least for test error, is around the same. Trying to fix the overfitting by reducing the depth also did not help, as test_error increased overall. Overall, this model is not a major improvement from our previous gradient booster regressor.
+
+Essentially, while compared to model 1 model 3 has a better testing error, we don't see much improvement from model 2 to model 3. It seems that a random forest wasn't able to capture our data any better than the gradient booster. Something we would hope to implement perhaps in the future would be a parameter grid for hyperparameterization. However, due to time constraints we were not able to this. Overall, it seems that throwing a complex model at this data didn't add much, and we will focus on the gradient booster for regression problems related to the dataset.
 
 # Results
 [TODO LIAM]
@@ -155,6 +159,7 @@ Contribution: I helped manage our deadlines and did a lot of the administrative 
 Title: "Developer and Researcher"
 Contribution: I was involved with the creation of models that we tested on. I did a lot of testing on the linear regression model including using cross-validation to try and improve MSE values. I also worked with my teammates to produce and write analyses.
 ### Ojas Vashishtha 
+Title: "Developer and Analyst"
 Contribution: I helped with writing some of the code for model 2 and writing the code for model 3 as well as thinking of ideas for those models. I also helped with some of the preprocessing like encoding and writing parts of the analysis for models 2 and 3. 
 
 ### Liam Manatt [TODO LIAM]
