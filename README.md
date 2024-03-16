@@ -187,7 +187,7 @@ Our lineup, we will admit is not the most believable as there was a lot of error
 # Conclusion
 Reflecting on this project, we can tell that predicting song popularity from factors is a very challenging task and includes a variety of factors that are hard to represent in a machine-learning model. Even though we used a variety of models, we were only able to minimize the MSE so much.
 
-However, one key takeawway we had is the importance of feature engineering. Just by implementing feature engineering into our models, we were able ot drop our error from over 400 to 300s. We also learned a lot about the the value of overfitting. We spent a lot of tinme finding the balance of overfitting and generalizing our data in our to optimize our model.
+However, one key takeaway we had is the importance of feature engineering. Just by implementing feature engineering into our models, we were able ot drop our error from over 400 to 300s. We also learned a lot about the the value of overfitting. We spent a lot of tinme finding the balance of overfitting and generalizing our data in our to optimize our model.
 Going forward, we could look into more data, potentially outside of Spotify such as artist data or other social media data. In addition, we could use more complex models, including does involving deep learning or neural networks. 
 
 # Collaboration Section
