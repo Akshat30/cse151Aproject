@@ -52,9 +52,6 @@ As our abstract states, our goal is to predict the popularity for the songs base
 
 We did run into an issue, which is that for a good amount of songs (even really popular ones), Spotify returns 0 as the popularity.
 
-## Figures
-[TODO LIAM]
-
 # Methods
 ## Data Exploration:
 From the Jypter Notebook linked above, we have these key insights:
@@ -79,12 +76,12 @@ In addition, after analyzing the heatmap and pairplots, it is evident that the o
 
 As we planned, we set up one hot encoding for the categorical values. We one hot encoded key, genre, and time signature. We then added two new features to make use of the data in artist name and song name. We create the features song_name_length and artist_name_length, we are hoping to use the relation of name length to better predict popularity. Then we min-maxed the remaining numerical features because they fall between the bounded interval 0-1. 
 
-We went through and refetched the popularity for songs that had a popularity of 0 originally. This time, we specified the market to be US, and had backup countries in case the popularity for the US was 0. After going through and updating these values, the number of songs with a popularity of 0 went from 2479 to 195. This gave us 2284 more datapoints to work with, allowing our training to be better.
+We went through and refetched the popularity for songs that had a popularity of 0 originally. This time, we specified the market to be US, and had backup countries in case the popularity for the US was 0. After going through and updating these values, the number of songs with a popularity of 0 went from 2479 to 195. This gave us 2284 more data points to work with, allowing our training to be better.
 
 ## Model 1
 With the min-maxed data and features created, we created a Linear Regression model to predict popularity. We set the training sample size to 80% and for any rows in the dataframe that had invalid data, we simply dropped them. Since we had over 10k rows of data, and we didn't have to drop many rows (around 10) we thought it would be fine to just drop them instead of replacing them with approximate data. 
 
-In addition, we implemented another linaer regression model with cross-validation. We used 10 folds for cross validation. For both these models, we got MSE values of around 400, which was pretty poor. We are currently in the under-fitting side of the fitting graph as our model produces a line which doesn't fit the data well. This was just a baseline model to understand the complexity required so this is expected.
+In addition, we implemented another linear regression model with cross-validation. We used 10 folds for cross-validation. 
 
 ### Future Steps (Model 1)
 
@@ -122,13 +119,14 @@ Finally, for our 3rd model we decided to use a random forest regressor. For our 
 With parameters of: max_depth=15, n_estimators = 50,vmin_samples_split= 5, min_samples_leaf = 2, we found a test error: 371.8593377175866 and train error: 134.97723106462342. Overall, the performance of the forest regressor compared to our previous model, at least for test error, is around the same. Trying to fix the overfitting by reducing the depth also did not help, as test_error increased overall. Overall, this model is not a major improvement from our previous gradient booster regressor.
 
 ### Analysis and future steps:
-Essentially, while compared to model 1 model 3 has a better testing error, we don't see much improvement from model 2 to model 3. It seems that a random forest wasn't able to capture our data any better than the gradient booster. Something we would hope to implement perhaps in the future would be a parameter grid for hyperparameterization. However, due to time constraints we were not able to this. Overall, it seems that throwing a complex model at this data didn't add much, and we will focus on the gradient booster for regression problems related to the dataset.
+Essentially, while compared to model 1 model 3 has a better testing error, we don't see much improvement from model 2 to model 3. It seems that a random forest wasn't able to capture our data any better than the gradient booster. Something we would hope to implement perhaps in the future would be a parameter grid for hyperparameterization. However, due to time constraints we were not able to do this. Overall, it seems that throwing a complex model at this data didn't add much, and we will focus on the gradient booster for regression problems related to the dataset.
 
 # Results
-[TODO LIAM]
+## Model 1:
+For both these models, we got MSE values of around 400, which was pretty poor. We are currently in the under-fitting side of the fitting graph as our model produces a line that doesn't fit the data well. This was just a baseline model to understand the complexity required so this is expected.
 
 # Discussion
-In this projet, we wanted to predict the popularity of songs on Spotify given various features of the song. We hypothesized that some of the features would have significant effects on the popularity, feature such as danceability and energy usually lead to popular pop songs.
+In this project, we wanted to predict the popularity of songs on Spotify given various features of the song. We hypothesized that some of the features would have significant effects on the popularity, feature such as danceability and energy usually lead to popular pop songs.
 
 We started with a basic linear regression, as that was the main model we were studying at the time. However, using this first linear regression model, we got a very poor MSE, telling us that a more complex model would be required to model the data. As the popularity of music is complexly influenced by a variety of factors, a linear model was not a good choice. 
 In this model, we also implemented feature engineering as an attempt to improve our mdoel's performance. Since this model is more effective at capturing non-linear relationships, we thought it would be better. In addition, we used one-hot encoding for categorical variables, introducing features like length of song and length of artist name. We hoped looking at all this data would improve the MSE and it did, but the MSE was still pretty poor. 
