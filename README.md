@@ -122,9 +122,13 @@ This model and the following model will address the logistic side of the problem
 
 ## Model 5:
 This model was our attempt at building an ANN for classification. It takes in the scaled dataset that the other model took in. The layers are all dense with the following units and activation functions:
+
 Input: X.Shape
+
 Layer 2: 32 Dense Relu
+
 Layer 3: 16 Dense Relu
+
 Layer 4: 1 Dense Sigmoid
 
 We found this model to be a good balance of nonlinearity and nonoverfitting, which was the overarching struggle of this project.
