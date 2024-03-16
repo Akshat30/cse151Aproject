@@ -115,7 +115,7 @@ For our next model, we want to continue the trend of using models that can captu
 Overall, the 2nd model was a success in that we improved both training and testing error without seeing much overfitting. The model was able to perform well due to its innate design in using an ensemble of models as well as our data being standardized and scaled. More signifianct hyper-parameter tuning could definitely add to this model, and is something we will explore in the future.
 
 ## Model 3:
-[TODO OJAS]
+Finally, for our 3rd model we decided to use a random forest regressor. We believed that the ensemble method of this classifier as well as its additional complexity would help in making predictions. With parameters of: max_depth=15, n_estimators = 50,vmin_samples_split= 5, min_samples_leaf = 2, we found a test error: 371.8593377175866 and train error: 134.97723106462342. Overall, the performance of the forest regressor compared to our previous model, at least for test error, is around the same. Trying to fix the overfitting by reducing the depth also did not help, as test_error increased overall. Overall, this model is not a major improvement from our previous gradient booster regressor.
 
 # Results
 [TODO LIAM]
@@ -133,9 +133,8 @@ Contribution:
 ### Christen Xie [TODO CHRISTEN]
 Title:
 Contribution:
-### Ojas Vashishtha [TODO OJAS]
-Title:
-Contribution:
+### Ojas Vashishtha 
+Contribution: I helped with writing some of the code for model 2 and writing the code for model 3 as well as thinking of ideas for those models. I also helped with some of the preprocessing like encoding and writing parts of the analysis for models 2 and 3. 
 ### Liam Manatt [TODO LIAM]
 Title:
 Contribution:
