@@ -116,6 +116,20 @@ Finally, for our 3rd model we decided to use a random forest regressor. For our 
 ### Analysis and future steps:
 Essentially, while compared to model 1 model 3 has a better testing error, we don't see much improvement from model 2 to model 3. It seems that a random forest wasn't able to capture our data any better than the gradient booster. Something we would hope to implement perhaps in the future would be a parameter grid for hyperparameterization. However, due to time constraints we were not able to do this. Overall, it seems that throwing a complex model at this data didn't add much, and we will focus on the gradient booster for regression problems related to the dataset.
 
+
+## Model 4:
+This model and the following model will address the logistic side of the problem. Here we attempt to categorize the songs in two bins, popular and unpopular. This greatly simplifies the problem and works to minimize the difficulty of predicting popularity. Model 4 is a logistic regression model, it takes in the same data as the other models but outputs a binarized popularity value.
+
+## Model 5:
+This model was our attempt at building an ANN for classification. It takes in the scaled dataset that the other model took in. The layers are all dense with the following units and activation functions:
+Input: X.Shape
+Layer 2: 32 Dense Relu
+Layer 3: 16 Dense Relu
+Layer 4: 1 Dense Sigmoid
+
+We found this model to be a good balance of nonlinearity and nonoverfitting, which was the overarching struggle of this project.
+
+
 # Results
 
 ## Data Preprocessing Results
