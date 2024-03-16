@@ -120,6 +120,7 @@ Essentially, while compared to model 1 model 3 has a better testing error, we do
 
 ## Data Preprocessing Results
 Our final Dataframe was 10130 rows, it had 40 columns which can be seen in the figure below.
+
 Fig 2 Columns
 ![screenshot](Graphs/6804fa2c605042c8e411459576fe9277.png)
 
