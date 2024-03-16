@@ -117,6 +117,7 @@ Essentially, while compared to model 1 model 3 has a better testing error, we do
 
 ## Data Preprocessing Results
 Our final Dataframe was 10130 rows, it had 40 columns which can be seen in the figure below.
+![screenshot](Graphs/6804fa2c605042c8e411459576fe9277.png)
 
 ## Model 1 Results:
 For both these models, we got MSE values of around 400, which was pretty poor. We are currently in the under-fitting side of the fitting graph as our model produces a line that doesn't fit the data well. This was just a baseline model to understand the complexity required so this is expected. The figure below shows our prediction vs the actual popularity. As we can see the two values seldom line up and our model is not equipped to handle this prediction problem.
