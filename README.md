@@ -93,19 +93,13 @@ Another model could possibly be a kernelized SVM. Given that our features/data c
 ### Evaluation of data, labels, and loss function
 For the data, we decided to make a change by using the StandardScaler in addition to our already scaled data. We also pivoted away from simple linear regression and went forward with a gradient booster regressor. Since our initial linear regression model wasn't as accurate, we decided to use a model that could better capture the non-linear relationship the dataset features had with the target variable. In addition, we experimented with trying to include only certain features in the training data, and leaving out features that had a correlation almost close to 0 with popularity. However, this did not seem to make our model better.
 
-### Comparing Training vs Test Error 
-To train the model, we used the same X_train, X_test, y_train, and y_test datasets as our initial linear regression model to ensure that we could compare the models' performances fairly. We also scaled the X_train and X_test datasets using standard scaler. After training the gradient boosting model, we found training and testing error of 347.7402630199366 and 399.97546067610523 respectively. From this it is clear that the data does not seem to be overfitting in any significant way as training and testing error are relatively similar. 
-
+### Comparing Training and Test Error 
+To train the model, we used the same X_train, X_test, y_train, and y_test datasets as our initial linear regression model to ensure that we could compare the models' performances fairly. We also scaled the X_train and X_test datasets using standard scaler. Because our model 1 had such high mse we were hoping to decrease this with model 2. We believe scaling the features would help with this as well as the switch to a Gradient boosting model.
 ### Fitting Graph and Comparison to Model 1 
 Compared to model 1 which had training and testing error of 444.6857792808256 and 437.17367820600833 respectively, Model 2 is an improvement with lower training and testing errors. This is likely due to the fact that the Gradient Boosting model better captures the non-linear relationship.
 
 ### Extensive Steps 
-We attempted to use GridSearch to find the best hyper-parameters, and this search tested 27 different possibilities with 135 total due to a crossfold of 5. While this did give us our best Test MSE so far (see below), it is very obvious to see that the model was very overfitted, due to the Train MSE being much lower than the Test MSE, almost 4 times less.
-
-```
-Test MSE: 371.38533319289274
-Train MSE: 106.98165918403983
-```
+We attempted to use GridSearch to find the best hyper-parameters, and this search tested 27 different possibilities with 135 total due to a crossfold of 5. While this did give us our best Test MSE so far (see results) we found signs of overfitting
 
 ### Plan for Next model 
 For our next model, we want to continue the trend of using models that can capture non-linear relationships. One possibility is kernel ridge regression, although we currently don't have an overfitting problem and the model could be computationally expensive. Another possibility is a random forest regressor, which could also help with capturing relationships between features and the popularity of a song. We also want to look into searching for more features on the Spotify API, and generating more features from those. This is because we are unable to find strong correlation with popularity, at the moment.
@@ -116,14 +110,36 @@ Overall, the 2nd model was a success in that we improved both training and testi
 ## Model 3:
 Finally, for our 3rd model we decided to use a random forest regressor. For our third model, we decided to pivot away from version of linear regression and try something different in hopes of getting a better MSE. We chose random forest specifically for 2 reasons: it is a type of model that can better adjust to complex features, and it is less susceptible to overfitting than a decision tree. 
 
-With parameters of: max_depth=15, n_estimators = 50,vmin_samples_split= 5, min_samples_leaf = 2, we found a test error: 371.8593377175866 and train error: 134.97723106462342. Overall, the performance of the forest regressor compared to our previous model, at least for test error, is around the same. Trying to fix the overfitting by reducing the depth also did not help, as test_error increased overall. Overall, this model is not a major improvement from our previous gradient booster regressor.
-
 ### Analysis and future steps:
 Essentially, while compared to model 1 model 3 has a better testing error, we don't see much improvement from model 2 to model 3. It seems that a random forest wasn't able to capture our data any better than the gradient booster. Something we would hope to implement perhaps in the future would be a parameter grid for hyperparameterization. However, due to time constraints we were not able to do this. Overall, it seems that throwing a complex model at this data didn't add much, and we will focus on the gradient booster for regression problems related to the dataset.
 
 # Results
-## Model 1:
-For both these models, we got MSE values of around 400, which was pretty poor. We are currently in the under-fitting side of the fitting graph as our model produces a line that doesn't fit the data well. This was just a baseline model to understand the complexity required so this is expected.
+
+## Data Preprocessing Results
+Our final Dataframe was 10130 rows, it had 40 columns which can be seen in the figure below.
+
+## Model 1 Results:
+For both these models, we got MSE values of around 400, which was pretty poor. We are currently in the under-fitting side of the fitting graph as our model produces a line that doesn't fit the data well. This was just a baseline model to understand the complexity required so this is expected. The figure below shows our prediction vs the actual popularity. As we can see the two values seldom line up and our model is not equipped to handle this prediction problem.
+
+## Model 2 Results:
+In model two we saw much better results, after gridsearch we were able to greatly decrease the train mse. Though the mse is rather large we took this as a good sign that there is some way that we could predict popularity. However, as seen below the model struggled with overfitting and still predicted poorer than we would hope. The scatter plot below shows each song's popularity vs its prediction. As we can see the model does seem to improve but is weighed down by its predictions on less popular songs.
+```
+Test MSE: 371.38533319289274
+Train MSE: 106.98165918403983
+```
+
+## Model 3 Results:
+With parameters of: max_depth=15, n_estimators = 50,vmin_samples_split= 5, min_samples_leaf = 2, we found a test error: 371.8593377175866 and train error: 134.97723106462342. Overall, the performance of the forest regressor compared to our previous model, at least for test error, is around the same. Trying to fix the overfitting by reducing the depth also did not help, as test_error increased overall. Overall, this model is not a major improvement from our previous gradient booster regressor. However it did seem to predict better on the more popular songs, again struggling with popularity scores under 20.
+
+
+## Logistic Results
+For the following subheaders we will describe our 4th and 5th models. These models are our way of making use of the preprocessing we accomplished. Though we were not entirely successful in being able to predict popularity of a song, we wanted to turn the problem into a classification assignment. We choose to make two more models which tried to predict whether or not a song would be popular.
+
+## Model 4 Results:
+Model 4 demonstrated to us that a logistic approach to the problem was much easier to handle than a regressive approach. Model 4 was a logistic regression model that took in scaled inputs and predicted whether a song was above 60 popularity score or not. This model faired much better than our previous models. It was able to achieve an accuracy of about 70%, which all things considered is pretty good. The figure below provides the classfication report for model 4
+
+## Model 5 Results:
+Model 5 was our expansion on model 4. It took in the same data, but this time fed it into an Ann which was able to classify whether a song was popular or not. As with previous model, the model struggled a bit from over fitting but did prove to be our most successful model. The figure below shows the classification report for the ANN model.
 
 # Discussion
 In this project, we wanted to predict the popularity of songs on Spotify given various features of the song. We hypothesized that some of the features would have significant effects on the popularity, feature such as danceability and energy usually lead to popular pop songs.
