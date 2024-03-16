@@ -130,8 +130,8 @@ Finally, for our 3rd model we decided to use a random forest regressor. We belie
 
 # Collaboration Section
 ### Akshat Jain
-Title:
-Contribution:
+Title: "Project Manager"
+Contribution: I helped manage our deadlines and did a lot of the administrative tasks, like creating the GitHub, notebook, making sure people were up to date with their work, and planning meetings. I also helped preprocess the data by pulling popularity from the Spotify API, helped make the first model, and performed the data analysis on Google Colab.
 ### Christen Xie [TODO CHRISTEN]
 Title:
 Contribution:
