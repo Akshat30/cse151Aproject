@@ -193,12 +193,15 @@ Going forward, we could look into more data, potentially outside of Spotify such
 # Collaboration Section
 ### Akshat Jain
 Title: "Project Manager"
+
 Contribution: I helped manage our deadlines and did a lot of the administrative tasks, like creating the GitHub, notebook, making sure people were up to date with their work, and planning meetings. I also helped preprocess the data by pulling popularity from the Spotify API, helped make the first model, and performed the data analysis on Google Colab.
 ### Christen Xie 
 Title: "Developer and Researcher"
+
 Contribution: I was involved with the creation of models that we tested on. I did a lot of testing on the linear regression model including using cross-validation to try and improve MSE values. I also worked with my teammates to produce and write analyses.
 ### Ojas Vashishtha 
 Title: "Developer and Analyst"
+
 Contribution: I helped with writing some of the code for model 2 and writing the code for model 3 as well as thinking of ideas for those models. I also helped with some of the preprocessing like encoding and writing parts of the analysis for models 2 and 3. 
 
 ### Liam Manatt
